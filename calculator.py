@@ -1,3 +1,4 @@
+import sys
 import pyjokes
 
 off = "O"
@@ -6,7 +7,7 @@ func = input(
     'type "J" to hear a joke, "C" to use the calculator or "O" to switch it Off: '
 ).upper()
 if func in off:
-    exit()
+    sys.exit("Goodbye!")
 elif func in ["J", "C", "O"]:
     while True:
         while func == "J":
@@ -19,8 +20,7 @@ elif func in ["J", "C", "O"]:
             if func == "C":
                 continue
             elif func in off:
-                print("Goodbye!")
-                exit()
+                sys.exit("Goodbye!")
 
         while func == "C":
             x, operation, y = input(
@@ -47,9 +47,8 @@ elif func in ["J", "C", "O"]:
             if func == "J":
                 continue
             elif func in off:
-                print("Goodbye!")
-                exit()
+                sys.exit("Goodbye!")
 else:
-    print(
+    sys.exit(
         'Your option is not valid: please, next time choose only among "J" "C" or "O".'
     )
