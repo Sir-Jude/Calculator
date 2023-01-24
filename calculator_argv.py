@@ -4,7 +4,7 @@ import sys
 import pyjokes
 
 # Exit if user provides a python file and the right number of arguments 
-if sys.argv[0][-3:] != ".py":
+if sys.argv[0].endswith(".py"):
     sys.exit("Not a Python file")
 elif len(sys.argv) > 4: # Too many
     sys.exit("Too many command-line arguments")
@@ -17,7 +17,7 @@ else:
             print(int(sys.argv[1]) + int(sys.argv[3]))
         elif sys.argv[2] == "-":
             print(int(sys.argv[1]) - int(sys.argv[3]))
-        elif sys.argv[2] == "*":
+        elif sys.argv[2] == "x":
             print(int(sys.argv[1]) * int(sys.argv[3]))
         elif sys.argv[2] == "/":
             try:
